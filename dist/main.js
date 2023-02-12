@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ accessApi)\n/* harmony export */ });\n// Write the functions that hit the API.You’re going to want functions that can take a location and return the weather data for that location.For now,just console.log() the information.;\r\n\r\n\r\n\r\n\r\nasync function accessApi() {\r\n  const location = \"London\";\r\n  const key = \"376608a803a41fcac5a52ce33f1139ae\";\r\n\r\n  const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`);\r\n  const result = await data.json();\r\n  console.log(result);\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ accessApi)\n/* harmony export */ });\n// Write the functions that hit the API.You’re going to want functions that can take a location and return the weather data for that location.For now,just console.log() the information.;\r\n\r\n\r\n\r\nlet arrayEx = [];\r\n\r\nasync function accessApi() {\r\n  const location = \"London\";\r\n  const key = \"376608a803a41fcac5a52ce33f1139ae\";\r\n  const tempUnit = \"metric\";    // imperial\r\n\r\n  const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}&units=${tempUnit}`);\r\n  const result = await data.json();\r\n  console.log(result);\r\n\r\n  //location\r\n  const description = result.weather[0].description;\r\n  const feelsLike = result.main.feels_like;\r\n  const humidity = result.main.humidity;\r\n\r\n  console.log(humidity);\r\n}\r\n\r\n\r\n\r\n\r\n\r\n// Write the functions that process the JSON data you’re getting from the API and return an object with only the data you require for your app.\r\n\n\n//# sourceURL=webpack://weather-app/./src/api.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n\r\n\r\n(0,_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n\r\n(0,_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 

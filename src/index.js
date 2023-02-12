@@ -1,1 +1,8 @@
-console.log("woa");
+import accessApi from "./api";
+
+accessApi();
+
+
+
+
+
